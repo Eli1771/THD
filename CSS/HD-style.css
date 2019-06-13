@@ -1,0 +1,836 @@
+
+body * {
+	font-family: sans-serif;
+}
+
+/*
+***HEADERS KEY***
+	-h1: Only the title
+	-h2: Table headers + titles? Under construction?
+	-h3: Default alerts for empty fields?
+	-h4: Helpful onpage notes (non pop-up)
+	Date headings
+	-h5: Policy Content Headers
+	-h6: Policy headers
+
+
+TO DO LIST:
+	-Style left side content so cells aren't too
+	tall with data in them
+	-Add date and time to negative space on top
+	of left side??
+	-set .tips to position:fixed so they don't
+	move with table
+*/
+
+header {
+	display: inline-block;
+	position: fixed;
+	background: #696969;
+	width: 100vw;
+	height: 10vh;
+	top: 0px;
+	left: 0px;
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 95%;
+}
+
+td, th {
+	background: white;
+	border: 1px solid black;
+}
+
+.currentPage {
+	background: white;
+	color: black;
+}
+
+.currentPage:hover {
+	background: white;
+	color: black;
+}
+
+.leftSide {
+	position: fixed;
+	background: #dadada;
+	left: 0;
+	top: 10vh;
+	width: 64vw;
+	height: 90vh;
+	display: inline-block;
+	overflow: scroll;
+	border: none;
+}
+
+.rightSide {
+	position: fixed;
+	background: #dadada;
+	right: 0;
+	top: 10vh;
+	width: 36vw;
+	height: 90vh;
+	display: inline-block;
+	border: none;
+}
+
+.fullScreen {
+	position: fixed;
+	background: #dadada;
+	left: 0;
+	top: 10vh;
+	width: 100vw;
+	height: 90vh;
+	display: inline-block;
+	overflow: scroll;
+	border: none;
+}
+
+.fullScreen .content table.schedule {
+	margin-bottom: 23vh;
+	display: inline-block;
+}
+
+.leftHalf {
+	position: fixed;
+	background: #dadada;
+	left: 0;
+	top: 10vh;
+	width: 50vw;
+	height: 90vh;
+	display: inline-block;
+	overflow: scroll;
+	border: none;
+}
+
+.rightHalf {
+	position: fixed;
+	background: #dadada;
+	right: 0;
+	top: 10vh;
+	width: 50vw;
+	height: 90vh;
+	display: inline-block;
+	border: none;
+}
+
+#addBoardRow {
+	display: block;
+	position: relative;
+	bottom: 20vh;
+	width: 10vw;
+}
+
+#tips {
+	display: inline-block;
+	position: fixed;
+	margin-left: 2%;
+	width: 32vw;
+}
+
+#dateTime {
+  position: relative;
+  display: block;
+  color: black;
+	width: 100%;
+	text-align: center;
+	text-decoration: underline;
+}
+
+#greenKey {
+	display: inline-block;
+	margin-left: 2%;
+	width: 1em;
+	height: 1em;
+	background: green;
+}
+
+#yellowKey {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: yellow;
+}
+
+#redKey {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: red;
+}
+
+h1 {
+	display: inline;
+	padding: 3vw 1vw 3vw 2vw;
+	background: #696969;
+	color: white;
+}
+
+h2, h3 {
+	margin: 1em;
+}
+
+h4 {
+	margin: 1em 0 .5em 0;
+}
+
+h5 {
+	font-size: 1.5em;
+	margin: 1%;
+}
+
+h6 {
+	font-size: 1.2em;
+	margin: 1%;
+	margin-left: 2vw;
+}
+
+nav {
+	position: relative;
+	display: inline;
+	background: #696969;
+	font-size: 2em;
+}
+
+nav a {
+	display: inline-block;
+	background: #696969;
+	position: relative;
+	text-align: center;
+	padding-top: 2vh;
+	height: 8vh;
+	width: 17%;
+	top: 0;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+nav a:link {
+	color: white;
+}
+
+nav a:visited {
+	color: white;
+}
+
+nav a:hover {
+	color: white;
+	text-decoration-color: black;
+	background: #424242;
+}
+
+nav a:active {
+	color: black;
+	text-decoration-color: black;
+	background: white;
+}
+
+#menu {
+	display: inline-block;
+  position: fixed;
+	top: 0;
+  right: 0;
+  width: 4vw;
+  height: 10vh;
+  padding: 1vh 2vw 0 2.3vw;
+  border-left: 2px solid #424242;
+}
+
+#menu:hover {
+	background: #424242;
+	border-left: none;
+	margin: 0 0 45vh 24vw;
+}
+
+#notifications {
+	display: none;
+}
+
+#notifications p {
+	color: #efefef;
+	font-style: italic;
+	font-weight: 100;
+	text-align: center;
+	font-size: 1.5em;
+	padding: 1vh 0 1vh 0;
+	margin: 1vh 1vw 1vh 1vw;
+	border-bottom: 1px solid #424242;
+}
+
+#menu:hover + #notifications {
+	display: block;
+	position: absolute;
+	top: 10vh;
+	right: 0;
+	width: 24vw;
+	height: 45vh;
+	background: #696969;
+	opacity: .88;
+	z-index: 2;
+}
+
+.dateNav, .dateNav > * {
+	display: inline-block;
+}
+
+.dateNav {
+  position: fixed;
+  margin-left: 39vw;
+  top: 20vh;
+  z-index: -1;
+}
+
+.leftSide .dateNav,
+.leftHalf .dateNav {
+	margin-left: 6vw;
+	z-index: -1;
+	top: 11vh;
+}
+
+#construction {
+	height: 90vh;
+	width: 100vw;
+}
+
+#construction h2 {
+	position: relative;
+	top : 50%;
+	text-align: center;
+}
+
+.tabs {
+	position: relative;
+	background: #dadada;
+	margin: 13vh 2% 0 2%;
+	width: 95%;
+	border: none;
+}
+
+#scheduleTabs {
+	margin: 3vh 2% 0 2%;
+}
+
+.addEntrySch {
+	position: fixed;
+	display: inline-block;
+	padding:  1vh 2% 1vh 2%;
+	bottom: 1vh;
+	left: 20vw;
+	z-index: 2;
+	background: #696969;
+	border: 1px solid black;
+	border-radius: 2vh;
+	color: white;
+}
+
+.addEntrySch table,
+.addEntrySch td,
+.addEntrySch h2 {
+	background: #696969;
+	border: none;
+	margin: 1vh;
+}
+
+.tab input {
+	width: 95%;
+}
+
+[type=radio].tab, #contentSlider {
+  display: none;
+}
+
+.tab {
+	display: inline-block;
+	position: relative;
+	width: 8vw;
+	cursor: pointer;
+	background: #eee;
+}
+
+.tab ~ label {
+	padding: 1vh 1vw 5vh 1vw;
+	background: #696969;
+	color: white;
+	font-size: 16pt;
+	text-align: center;
+	font-weight: lighter;
+	border: 1px solid black;
+	border-radius: .75vh;
+}
+
+.tab ~ label:hover {
+	background: #424242;
+}
+
+[type=radio]:checked + label {
+	z-index: 2;
+	background: white;
+	color: black;
+}
+
+.content {
+	position: absolute;
+	margin-top: 7vh;
+	left: 0;
+	overflow: scroll;
+	display: none;
+	border: none;
+}
+
+.content td {
+	text-align: center;
+}
+
+.content table {
+	border: none;
+}
+
+#tabOne:checked ~ #contentOne,
+#tabTwo:checked ~ #contentTwo,
+#tabThree:checked ~ #contentThree,
+#tabFour:checked ~ #contentFour,
+#tabFive:checked ~ #contentFive,
+#tabSix:checked ~ #contentSix {
+	z-index: 1;
+	display: inline-block;
+}
+
+#tabFive + label {
+	background: #3178b5;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	padding-bottom: 3vh;
+}
+
+#tabSix + label {
+	background: #3178b5;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	padding-bottom: 3vh;
+}
+
+#tabFive + label:hover,
+#tabSix + label:hover {
+	background: #25639a;
+}
+
+#tabFive:checked + label,
+#tabSix:checked + label {
+	color: white;
+	background: #60a6e2;
+}
+
+table.schedule td.selectable:hover {
+	background: #d0d1ff;
+}
+
+table.schedule td.selectable > * {
+	margin: 0px;
+}
+
+table.schedule td.selectCol {
+	background: #d0d1ff;
+}
+
+table.schedule td.colAwaiting {
+	background: #dbffd0;
+}
+
+table.schedule td.awaitingEntry {
+	background: #dbffd0;
+}
+
+#groomSchedDate1 {
+	display: inline-block;
+	margin-right: 15vw;
+}
+
+#groomSchedDate2 {
+	display: inline-block;
+}
+
+#groomDateNav {
+	margin-left: 27vw;
+}
+
+.leftSide .content table {
+	overflow: scroll;
+	width: 62vw;
+	margin-bottom: 3vh;
+}
+
+input, select, button {
+	background: white;
+	width: 80%;
+}
+
+input.fuButton {
+	width: inherit;
+}
+
+input[type=submit]:hover {
+	background: #b0b0b0;
+}
+
+span, fieldset {
+	display: inline;
+}
+
+#dashboard {
+	position: relative;
+	display: inline-block;
+	color: white;
+	background: #60a6e2;
+	margin: 2%;
+	padding: 0;
+	height: 30vh;
+	width: 95%;
+	overflow: scroll;
+	border: 1px solid black;
+	border-radius: 3vh;
+}
+
+#dashboard label {
+	display: inline-block;
+	margin: 0;
+	width: 43%;
+	text-align: center;
+	border: none;
+	border-radius: 0;
+}
+
+#dashboard div {
+	position: relative;
+	margin: 2%;
+	height: 20vh;
+	background: #60a6e2;
+	color: black;
+}
+
+#dashboard table {
+	width: 32vw;
+	background: #60a6e2;
+	border: none;
+}
+
+.dogCount td,
+.dogCount th,
+.dogCount tr {
+	background: #60a6e2;
+	border: none;
+	height: 2em;
+}
+
+div.dogCount {
+	text-align: center;
+}
+
+div.dogCount table {
+	position: relative;
+	top: 4vh;
+	border: none;
+	color: white;
+}
+
+div.dogCount td:first-child {
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+
+.monCount table {
+	position: relative;
+	top: 2vh;
+}
+
+.monCount table * {
+	border: none;
+}
+
+.monCount tr {
+	background-image: url(../Images/green.png);
+}
+
+.monCount tr:last-child {
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+
+.monCount td:nth-child(2),
+.monCount td:last-child {
+	text-align: center;
+}
+
+.monCount tr:nth-child(odd) td {
+	background: #dadada;
+}
+
+#search {
+	position: fixed;
+	margin: 2%;
+}
+
+#searchWindow {
+	position: relative;
+	display: inline-block;
+	width: 95%;
+	height: 60vh;
+	top: 0;
+	background: white;
+	border: 1px solid black;
+	color: #a0a0a0;
+}
+
+#filters {
+	display: none;
+	position: absolute;
+	top: 8em;
+	left: 1vw;
+	z-index: 1;
+}
+
+#filtersButton {
+	display: none;
+}
+
+#filters table{
+	width: 100%;
+}
+
+#filters table td {
+	background: #dadada;
+}
+
+#filtersButton:checked ~ #filters {
+	display: inline-block;
+	z-index: 1;
+}
+
+.fileBrowser {
+	height: 30vh;
+	margin: 2%;
+	background: white;
+	border: 1px solid black;
+	border-radius: 3vh;
+	color: #a0a0a0;
+}
+
+.fileViewer {
+	height: 55vh;
+	margin: 0 2% 2% 2%;
+	background: white;
+	border: 1px solid black;
+	border-radius: 3vh;
+	color: #a0a0a0;
+}
+
+#fileViewButtons {
+	position: fixed;
+	top: 95vh;
+	width: 34%;
+	margin-left: .75vh;
+	z-index: 2;
+}
+
+#fileViewButtons button {
+	display: inline-block;
+	width: 49%;
+}
+
+#drButtons {
+	position: fixed;
+	bottom: 1vh;
+	left: 21vw;
+	width: 60%;
+	margin-left: .75vh;
+	z-index: 2;
+}
+
+#drButtons div {
+	display: inline-block;
+	padding:  1vh 4% 1vh 4%;
+	background: #60a6e2;
+	border: 1px solid black;
+	border-radius: 2vw;
+	color: white;
+	width: 9vw;
+}
+
+button:hover {
+	background: #b0b0b0;
+}
+
+.dcSchedDiv {
+	position: relative;
+	display: inline-block;
+	width: 43%;
+	text-align: left;
+	left: -.5vw;
+}
+
+.dcSchedDiv:last-child {
+	text-align: right;
+}
+
+.defaultMessage {
+	position: relative;
+	top: 35%;
+	text-align: center;
+}
+
+.left, .right {
+	width: 2vw;
+	position: relative;
+}
+
+#log {
+	margin: 10vh 2% 25vh 2%;
+}
+
+#addEntryLog {
+	position: fixed;
+	display: inline-block;
+	padding:  1vh 2% 1vh 2%;
+	bottom: 1vh;
+	left: 8vw;
+	z-index: 2;
+	background: #696969;
+	border: 1px solid black;
+	border-radius: 2vh;
+	color: white;
+}
+
+#addEntryLog table,
+#addEntryLog td,
+#addEntryLog h2 {
+	background: #696969;
+	border: none;
+	margin: 1vh;
+}
+
+/*fieldset {
+	position: absolute;
+}*/
+
+legend {
+	position: absolute;
+	top: 0;
+}
+
+#pricesAndPolicies, #tasks {
+	position: relative;
+	display: inline-block;
+	color: white;
+	background: #696969;
+	margin: 2%;
+	margin-bottom: 0;
+	padding: 0;
+	height: 41vh;
+	width: 95%;
+	overflow: scroll;
+	border: 1px solid black;
+	border-radius: 3vh;
+}
+
+#policyContents {
+	position: fixed;
+	display: inline-block;
+	background: #9e9e9e;
+	margin-left: 1vw;
+	height: 30vh;
+	width: 2vw;
+}
+
+#policyContents img {
+	position: relative;
+	top: 40%
+}
+
+#policyContentsWindow {
+	position: relative;
+	display: none;
+	background: #9e9e9e;
+	opacity: .88;
+	color: white;
+	left: 3vw;
+	padding: 1vh;
+	height: 30vh;
+	z-index: 1;
+}
+
+#policyContentsWindow a {
+	color: white;
+	display: block;
+	text-decoration: none;
+}
+
+#policyContentsWindow a:link {
+	color: white;
+}
+
+#policyContentsWindow a:hover {
+	color: white;
+}
+
+#policyContentsWindow a:visited {
+	color: white;
+}
+
+#policyWindow {
+	position: absolute;
+	display: inline-block;
+	background: white;
+	color: black;
+	left: 3vw;
+	width: 39vw;
+	padding: 2vw;
+	height: 24vh;
+	overflow: scroll;
+}
+
+#policyWindow p {
+	margin: 1% 1% 1% 4vw;
+}
+
+#dailyChecklist {
+	position: absolute;
+	background: white;
+	color: black;
+	margin-left: 2%;
+	padding: 2%;
+	width: 39vw;
+	overflow: scroll;
+}
+
+#dailyChecklist input {
+	width: auto;
+}
+
+#dailyChecklist table td {
+	border: 1px solid white;
+}
+
+#dailyChecklist tr:nth-child(odd) td {
+	background: #dadada;
+}
+
+#dailyChecklist	label {
+	z-index: 5;
+}
+
+.splitBoardCell {
+	display: inline-block;
+	width: 40%;
+}
+
+#contentOne table.schedule img {
+	display: inline-block;
+	height: 4vh;
+}
+
+.filledBoardCell {
+
+}

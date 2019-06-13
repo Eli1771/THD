@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "eng">
+<head>
+	<meta charset = "UTF-8">
+	<title>The Happy Dog</title>
+	<link rel = "stylesheet" href = "CSS/HD-style.css">
+</head>
+<body>
+	<header>
+		<h1>T.H.D.<span><img src = "Images/pawprint.png" height = "45"></span></h1>
+		<nav>
+			<a href = "home.html">Home</a>
+			<a href = "schedules.html">Schedules</a>
+			<a class = "currentPage">Forms</a>
+			<a href = "log.html">Log</a>
+		</nav>
+	</header>
+<!--Starting unique code-->
+	<div class = "leftSide">
+		<form id = "search">
+			<h2>Search</h2>
+		<table>
+			<thead>
+				<th>Last Name</th>
+				<th>Pet Name</th>
+				<th>Customer Name</th>
+				<th>Breed</th>
+				<th>Phone</th>
+				<th>eMail</th>
+				<th>Filters</th>
+			</thead>
+			<tr>
+				<td><input type = "text"></td>
+				<td><input type = "text"></td>
+				<td><input type = "text"></td>
+				<td><input type = "text"></td>
+				<td><input type = "text"></td>
+				<td><input type = "text"></td>
+				<td><input type = "checkbox" id = "filtersButton" name = "filtersButton">
+				<label for = "filtersButton"><img src = "Images/downArrow.png" height = "20"></td>
+				<td><input type = "submit" value = "Search"></td>
+			</tr>
+		</table>
+		<div id = "filters">
+			<table>
+				<tr>
+					<td>
+						<h2>Services Used</h2>
+						<input type = "checkbox" name = "service" value = "daycare" id = "suDc"><label for = "suDc">Daycare</label>
+						<input type = "checkbox" name = "service" value = "boarding" id = "suBo"><label for = "suBo">Boarding</label>
+						<input type = "checkbox" name = "service" value = "grooming" id = "suGr"><label for = "suGr">Grooming</label>
+						<input type = "checkbox" name = "service" value = "bathing" id = "suBa"><label for = "suBa">Bathing</label>
+					</td>
+					<td>
+						<h2>Hasn't Visited</h2>
+						<input type = "date">
+					</td>
+<!--needs finished-->
+					<td>
+						<h2>Vaccinations</h2>
+						<table>
+							<tr>
+								<td>
+									<input type = "radio" name = "vaccinations" value = "rabies" id = "vRa"><label for = "vRa">Rabies</label>
+									<input type = "radio" name = "vaccinations" value = "all" id = "vAl"><label for = "vAl">All</label>
+								</td>
+								<td>
+									<input type = "checkbox" value = "expired" id = "vExpired"><label for = "vExpired">Expired</label>
+									<input type = "checkbox" value = "expiring" id = "vExpiring"><label for = "vExpiring">Expiring Soon</label>
+									<input type = "checkbox" value = "good" id = "vGo"><label for = "vGo">Good</label>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id = "searchWindow">
+			<h3 class = "defaultMessage">Enter Search Terms</h3>
+		</div>
+		</form>
+	</div>
+	<div class = "rightSide">
+		<div class = "fileBrowser">
+			<div class = "defaultMessage">
+				<h3>No Pet Selected</h3>
+			</div>
+<!--is this all js?-->
+		</div>
+		<div class = "fileViewer">
+			<div class = "defaultMessage">
+				<h3>No File Selected</h3>
+				<img src = "Images/blankScreenDog.png" height = "80">
+			</div>
+			<div id = "fileViewButtons">
+				<button type = "button">View Files</button>
+				<button type = "button">Edit Vaccinations</button>
+			</div>
+		</div>
+	</div>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src = "JS/forms_script.js"></script>
+</body>
+</html>

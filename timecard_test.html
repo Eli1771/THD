@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang = "eng">
+<head>
+  <meta charset = "UTF-8">
+  <title>THD Timecard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    .tabs {
+      display: block;
+      position: fixed;
+      left: 45%;
+      top: 45%;
+      background: #eee;
+      border: 1px solid black;
+      border-radius: 5%;
+    }
+    .tab {
+      display: none;
+    }
+    .tab:checked + label {
+      color: blue;
+    }
+    .tabs .content {
+      display: none;
+    }
+    #tabOne:checked ~ #contentOne,
+    #tabTwo:checked ~ #contentTwo {
+      display: block;
+    }
+    .employee {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <div class = "tabs">
+    <h1>WEBCLOCK</h1>
+    <input type = "radio" class = "tab" name = "tabSet" id = "tabOne" checked>
+      <label for = "tabOne">CLOCK</label>
+    <input type = "radio" class = "tab" name = "tabSet" id = "tabTwo">
+      <label for = "tabTwo">LOG</label>
+    <div class = "content" id = "contentOne">
+      Id:<input type = "number" id = "empId">
+      Password:<input type = "number" id = "password">
+      <input type = "submit" id = "punch" value = "Punch">
+      <h3 id = "time">TIME UNAVAILABLE</h3>
+    </div>
+    <div class = "content" id = "contentTwo">
+      <div class = "employee">
+        <h3>Eli</h3>
+      </div>
+      <div class = "employee">
+        <h3>Aubrey</h3>
+      </div>
+      <div class = "employee">
+        <h3>Jake</h3>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  $(document).ready(function() {
+    time();
+    punch();
+  });
+  let employees = [
+    {name: 'Eli', id: 1111, password: 11, in: false},
+    {name: 'Aubrey', id: 2222, password: 22, in: false},
+    {name: 'Jake', id: 3333, password: 33, in: false}
+  ];
+  let ids = {eli: 1111, aubrey: 2222, jake: 3333};
+  let time = function() {
+    let d = new Date();
+    let h = d.getHours();
+    let m = d.getMinutes();
+    let half = ' AM';
+    //FORMAT
+    if (h > 12) {
+      h -= 12;
+      half = ' PM';
+    }
+    if (h == 12) {
+      half = ' PM'
+    }
+    if (h == 0) {
+      h = 12;
+    }
+    if (m < 10) {
+      m = '0' + m;
+    }
+    let s = h + ':' + m + half;
+    document.querySelector('#time').innerHTML = s;
+    window.setInterval(time, 10000);
+    }
+    let punch = function() {
+      let p = document.querySelector('input#punch');
+      p.addEventListener('click', function() {
+        let id = document.querySelector('input#empId');
+        let password = document.querySelector('input#password');
+        let e;
+        let inOrOut;
+        let time = document.querySelector('#time').innerHTML
+        //parse employees object to match id
+        for (let i = 0; i < employees.length; i++) {
+          if (id.value == employees[i].id) {
+            e = employees[i];
+          }
+        }
+        if (e == undefined) {
+          alert('Incorrect Id or Password');
+        } else {
+          //LOGIN SUCCESSFUL
+          if (password.value == e.password) {
+            alert('Login Successful!');
+            if (e.in == false) {
+              e.in = true;
+              inOrOut = 'In';
+            } else {
+              e.in = false;
+              inOrOut = 'Out';
+            }
+            let names = document.querySelectorAll('#contentTwo h3');
+            let cell;
+            for (let j = 0; j < names.length; j++) {
+              if (names[j].innerHTML == e.name) {
+                names[j].parentElement.innerHTML += '<p>' + inOrOut + ' - ' + time;
+              }
+            }
+          } else {
+            alert('Incorrect Id or Password');
+          }
+        }
+        id.value = '';
+        password.value = '';
+      });
+    }
+
+  </script>
+</body>
+</html>

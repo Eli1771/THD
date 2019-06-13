@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang = "eng">
+<head>
+	<meta charset = "UTF-8">
+	<title>The Happy Dog</title>
+	<link rel = "stylesheet" href = "CSS/HD-style.css">
+</head>
+<body>
+	<header>
+		<h1>T.H.D.<span><img src = "Images/pawprint.png" height = "45"></span></h1>
+		<nav>
+			<a href = "home.html">Home</a>
+			<a class = "currentPage">Schedules</a>
+			<a href = "forms.html">Forms</a>
+			<a href = "log.html">Log</a>
+		</nav>
+	</header>
+	<!--Starting unique code-->
+	<div class = "fullScreen">
+		<div id = "dateTime">
+			<h3>DATE INFO UNAVAILABLE</h3>
+		</div>
+		<div class = "tabs" id = "scheduleTabs">
+			<input type = "radio" id = "tabOne" name = "tabSetOne" class = "tab" checked>
+				<label for = "tabOne">Boarding</label>
+			<input type = "radio" id = "tabTwo" name = "tabSetOne" class = "tab">
+				<label for = "tabTwo">Grooming</label>
+			<input type = "radio" id = "tabThree" name = "tabSetOne" class = "tab">
+				<label for = "tabThree">Daycare</label>
+			<div class = "content tabSetOne activeContent" id = "contentOne">
+				<!--div for date header and navigation bars-->
+				<div class = "dateNav">
+					<button type = "button" class = "left"><img src = "Images/leftArrow.png" height = "20"></button>
+					<h4>DATE INFO UNAVAILABLE</h4>
+					<button type = "button" class = "right"><img src = "Images/RightArrow.png" height = "20"></button>
+				</div>
+				<!--boarding table-->
+				<table class = "schedule">
+					<thead>
+						<th></th>
+						<th>Sunday</th>
+						<th>Monday</th>
+						<th>Tuesday</th>
+						<th>Wednesday</th>
+						<th>Thursday</th>
+						<th>Friday</th>
+						<th>Saturday</th>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<button type = "button" id = "addBoardRow">Add Row</button>
+				<div class = "addEntrySch">
+					<h2>Enter Board:</h2>
+					<table>
+						<tr>
+							<td>Customer Name</td>
+							<td>Pet Name</td>
+							<td>Start Date</td>
+							<td>End Date</td>
+							<td>Kennel Size</td>
+							<td>Add Split</td>
+							<td>Comments</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><input type = "text" name = "cust"></td>
+							<td><input type = "text" name = "pet"></td>
+							<td><input type = "date" name = "start"></td>
+							<td><input type = "date" name = "end"></td>
+							<td><select>
+								<option>300</option>
+								<option>200</option>
+								<option>400 (top)</option>
+								<option>400 (bottom)</option>
+								<option>100</option>
+								<option>D/C Room</option>
+							</select></td>
+							<td><input type = "button" name = "splitSch" value = "Add a Split"></td>
+							<td><input type = "text" name = "comments"></td>
+							<td><input type = "submit" name = "submit" value = "Submit"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class = "content tabSetOne" id = "contentTwo">
+				<!--div for date header and navigation bars-->
+				<div class = "dateNav" id = "groomDateNav">
+					<button type = "button" class = "left"><img src = "Images/leftArrow.png" height = "20"></button>
+					<h4>DATE INFO UNAVAILABLE</h4>
+					<button type = "button" class = "right"><img src = "Images/RightArrow.png" height = "20"></button>
+				</div>
+			<!--this is the grooming schedule-->
+				<table class = "schedule">
+					<thead>
+						<th>Time</th>
+						<th><button type = "button" class = "assignGroomer">Add Groomer</button></th>
+						<th>Time</th>
+						<th><button type = "button" class = "assignGroomer">Add Groomer</button></th>
+						<th>Time</th>
+						<th>Bath</th>
+					</thead>
+	<!--automate remaining rows-->
+				</table>
+			<!--second groom schedule page-->
+				<table class = "schedule">
+					<thead>
+						<th>Time</th>
+						<th><button type = "button" class = "assignGroomer">Add Groomer</button></th>
+						<th>Time</th>
+						<th><button type = "button" class = "assignGroomer">Add Groomer</button></th>
+						<th>Time</th>
+						<th>Bath</th>
+					</thead>
+	<!--automate remaining rows-->
+				</table>
+				<div class = "addEntrySch">
+					<h2>Enter Groom:</h2>
+					<table>
+						<tr>
+							<td>Customer Name</td>
+							<td>Pet Name</td>
+							<td>Breed</td>
+							<td>Phone Number</td>
+							<td>Addl. Number</td>
+							<td>Comments</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><input type = "text" name = "cust"></td>
+							<td><input type = "text" name = "pet"></td>
+							<td><input type = "text" name = "breed"></td>
+							<td><input type = "number" name = "phone"></td>
+							<td><input type = "number" name = "phoneTwo"></td>
+							<td><input type = "text" name = "comments"></td>
+							<td><input type = "submit" name = "submit" value = "Submit"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		<div class = "content tabSetOne" id = "contentThree">
+			<!--div for date header and navigation bars-->
+			<div class = "dateNav">
+				<button type = "button" class = "left"><img src = "Images/leftArrow.png" height = "20"></button>
+				<h4>DATE INFO UNAVAILABLE</h4>
+				<button type = "button" class = "right"><img src = "Images/RightArrow.png" height = "20"></button>
+			</div>
+			<!--this is the daycare schedule-->
+			<table class = "schedule">
+				<thead>
+					<th></th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+				 	<th>Saturday</th>
+					<th>Sunday</th>
+				</thead>
+		<!--automate remaining rows-->
+			</table>
+			<div class = "addEntrySch">
+				<h2>Enter DC Booking:</h2>
+				<table>
+					<tr>
+						<td>Customer Name</td>
+						<td>Pet Name</td>
+						<td>Group</td>
+						<td>Repeating?</td>
+						<td>Comments</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type = "text" name = "cust"></td>
+						<td><input type = "text" name = "pet"></td>
+						<td><select>
+							<option>Bigs</option>
+							<option>Littles</option>
+						</select></td>
+						<td><input type = "checkbox"></td>
+						<td><input type = "text" name = "comments"></td>
+						<td><input type = "submit" name = "submit" value = "Submit"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src = "JS/schedules_script.js"></script>
+</body>
+</html>

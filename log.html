@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang = "eng">
+<head>
+	<meta charset = "UTF-8">
+	<title>The Happy Dog</title>
+	<link rel = "stylesheet" href = "CSS/HD-style.css">
+</head>
+<body>
+	<header>
+		<h1>T.H.D.<span><img src = "Images/pawprint.png" height = "45"></span></h1>
+		<nav>
+			<a href = "home.html">Home</a>
+			<a href = "schedules.html">Schedules</a>
+			<a href = "forms.html">Forms</a>
+			<a class = "currentPage">Log</a>
+		</nav>
+	</header>
+	<div class = "leftHalf">
+		<div class = "dateNav">
+			<button type = "button" class = "left"><img src = "Images/leftArrow.png" height = "20"></button>
+			<h4>DATE INFO UNAVAILABLE</h4>
+			<button type = "button" class = "right"><img src = "Images/RightArrow.png" height = "20"></button>
+		</div>
+		<table id = "log">
+			<thead>
+				<th>Time</th>
+				<th>Event</th>
+				<th>Follow-Up</th>
+				<th>Comments</th>
+			</thead>
+		</table>
+		<div id = "addEntryLog">
+			<h2>Enter Into Log:</h2>
+			<table>
+				<tr>
+					<td>Event</td>
+					<td>Follow Up Required?</td>
+					<td>Comments</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "action"></td>
+					<td><input type = "checkbox" name = "fuYesOrNo">
+					<input type = "text" name = "fu" disabled></td>
+					<td><input type = "text" name = "comments"></td>
+					<td><input type = "submit" name = "submit" value = "Submit" class = "s"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class = "rightHalf">
+		<div id = "pricesAndPolicies">
+			<h2>Prices and Policies</h2>
+			<label for = "contentSlider">
+				<div id = "policyContents">
+					<input type = "checkbox" name = "contentSlider" id = "contentSlider">
+					<img src="Images/RightArrow.png" height="20">
+				</div>
+			</label>
+			<div id = "policyContentsWindow">
+				<a href = "#prices">Prices</a>
+				<a href = "#policies">Policies</a>
+				<a href = "#daycare">Daycare</a>
+				<a href = "#dcTrials">Daycare Trials</a>
+			</div>
+			<div id = "policyWindow">
+				<h5 id = "prices">Prices</h5>
+				<h6>Daycare</h6>
+				<p>1 Dog, Full-Day: $25</p>
+				<p>1 Dog, Half-Day: $20</p>
+				<p>2 Dogs, Full-Day: $45</p>
+				<p>2 Dogs, Half-Day: $40</p>
+				<br>
+				<p>(Full Day: 1rst dog $25, each additional dog $20 minus $5 for half day)</p>
+				<br>
+				<p>**Add bath or groom for half-day price</p>
+				<h6>Boarding</h6>
+				<p>1 Dog kennel: $35/night</p>
+				<p>2 Dog kennel: $53/night</p>
+				<p>3 Dog kennel: $70/night</p>
+				<br>
+				<p>**No more than 3 Dogs per kennel</p>
+				<h5 id = "policies">Policies</h5>
+				<h6 id = "daycare">Daycare</h6>
+				<p>The following is required for a dog to be eligible for Daycare:</p>
+				<ul>
+					<li>Dog must have up to date Rabies, Bordatella and Distemper vaccinations</li>
+					<li>Dog must have a negative fecal exam from no more than one year ago</li>
+					<li>Dogs over one year old must have a negative heartworm blood test</li>
+					<li>Dogs over 9 months old must be fixed</li>
+					<li>Dog must be at least 4 months old and have had their Rabies, Bordatella and Distemper vaccinations for at least 14 days</li>
+					<li>Dog must pass a "Daycare Trial" as defined below</li>
+					<li>Owner must fill out a Daycare card and sign both sides</li>
+					<li>Owner must fill out a Boarding packet and sign each page</li>
+				</ul>
+				<p>Dogs are seperated into Bigs and Littles based on size and temperment. Medium-sized dogs may be placed in either group depending where they are most comfortable</p>
+				<p>All groups of dogs are supervised by a kennel worker at all times</p>
+				<p>Bowls of water are placed in any space with dogs in it at all times</p>
+				<h6 id = "dcTrials">Daycare Trials</h6>
+				<p>Daycare trials are to be conducted in the following matter:</p>
+			</div>
+		</div>
+		<div id = "tasks">
+			<h2>Tasks</h2>
+			<div id = "dailyChecklist">
+				<h5>Daily</h5>
+				<table>
+					<tr><td><input type = "checkbox" class = "task" id = "littlesCheck"><label for = "littlesCheck">Clean Littles Room</label></td></tr>
+					<tr><td><input type = "checkbox" class = "task" id = "bigsCheck"><label for = "bigsCheck">Clean Bigs Room</label></td></tr>
+					<tr><td><input type = "checkbox" class = "task" id = "biscuitCheck"><label for = "biscuitCheck">Clean Biscuit's Room</label></td></tr>
+					<tr><td><input type = "checkbox" class = "task" id = "callsCheck"><label for = "callsCheck">Make Reminder Calls</label></td></tr>
+				</table>
+				<h5>Miscellaneous</h5>
+				<table>
+				</table>
+				<input type = "text" id = "newTask">
+				<input type = "button" id = "addTask" value = "addTask">
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src = "JS/log_script.js"></script>
+</body>
+</html>

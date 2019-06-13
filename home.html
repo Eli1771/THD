@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang = "eng">
+<head>
+	<meta charset = "UTF-8">
+	<title>The Happy Dog</title>
+	<link rel = "stylesheet" href = "CSS/HD-style.css">
+</head>
+<body>
+	<header>
+		<h1>T.H.D.<span><img src = "Images/pawprint.png" height = "45"></span></h1>
+		<nav>
+			<a class = "currentPage">Home</a>
+			<a href = "schedules.html">Schedules</a>
+			<a href = "forms.html">Forms</a>
+			<a href = "log.html">Log</a>
+		</nav>
+	</header>
+	<div id = "menu"><img src = "Images/notifications.png" height = "55"></div>
+	<div id = "notifications">
+		<p>No current notifications</p>
+	</div>
+<!--Starting unique code-->
+<!--Left half of page-->
+	<div class = "leftSide">
+		<div id = "tips">
+			<p>**Pet names are colored based on vaccination status**</p>
+			<p>
+				<span><div id = "greenKey"></div></span> - good
+				<span><div id = "yellowKey"></div></span> - expiring in < 30 days
+				<span><div id = "redKey"></div></span> - expired OR no records
+			</p>
+		</div>
+		<div class = "tabs">
+		  <input type = "radio" id = "tabOne" name = "tabSetOne" class = "tab" checked>
+				<label for = "tabOne">Daycare</label>
+			<input type = "radio" id = "tabTwo" name = "tabSetOne" class = "tab">
+				<label for = "tabTwo">Boarding</label>
+			<input type = "radio" id = "tabThree" name = "tabSetOne" class = "tab">
+				<label for = "tabThree">Grooming</label>
+			<input type = "radio" id = "tabFour" name = "tabSetOne" class = "tab">
+				<label for = "tabFour">Bathing</label>
+				<div class = "dateNav">
+					<button type = "button" class = "left"><img src = "Images/leftArrow.png" height = "20"></button>
+					<h4>DATE INFO UNAVAILABLE</h4>
+					<button type = "button" class = "right"><img src = "Images/RightArrow.png" height = "20"></button>
+				</div>
+				<!--CONTENT BELOW-->
+			<div class = "content tabSetOne activeContent" id = "contentOne">
+				<table>
+					<thead>
+						<th>Customer Name</th>
+						<th>Pet Name(s)</th>
+						<th>Amount For Daycare</th>
+						<th>Addl' Amount*</th>
+						<th>Total Amount</th>
+						<th>CA, CC, CARD?</th>
+						<th>Tips</th>
+						<th>Comments/Additional Amounts</th>
+					</thead>
+					<tr class = "activeRow">
+						<form>
+						<td><input type = "text" name = "cust"><br></td>
+						<td><input type = "text" name = "pet"><br></td>
+						<td><input type = "number" name = "amount"><br></td>
+						<td class = "stackedInput"><input type = "text" name = "serviceAdd"><br><input type = "number" name = "amountAdd"><br></th>
+						<td><input type = "number" name = "total"><br></th>
+						<td><select name = "payMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+							<option value = "CARD">CARD</option>
+							<option value = "P/P">P/P</option>
+							<option value = "W/P">W/P</option>
+							<option value = "N/C">N/C</option>
+						</select></th>
+						<td class = "stackedInput"><select name = "tipMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+						</select><br>
+						<input type = "number" name = "tipAmount"><br></td>
+						<td><input type = "text" name = "comments"><br></td>
+						<td><input type = "submit" value = "Submit" class = "submit"></td>
+						</form>
+					</tr>
+		<!--automate additional rows w/ script-->
+				</table>
+			</div>
+			<div class = "content tabSetOne" id = "contentTwo">
+				<table>
+					<thead>
+						<th>Customer Name</th>
+						<th>Pet Name(s)</th>
+						<th>Amount For Daycare</th>
+						<th>Addl' Amount*</th>
+						<th>Total Amount</th>
+						<th>CA, CC, CARD?</th>
+						<th>Tips</th>
+						<th>Comments/Additional Amounts</th>
+					</thead>
+					<tr class = "activeRow">
+						<form>
+						<td><input type = "text" name = "cust"><br></td>
+						<td><input type = "text" name = "pet"><br></td>
+						<td><input type = "number" name = "amount"><br></td>
+						<td class = "stackedInput"><input type = "text" name = "serviceAdd"><br><input type = "number" name = "amountAdd"><br></th>
+						<td><input type = "number" name = "total"><br></th>
+						<td><select name = "payMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+							<option value = "CARD">CARD</option>
+							<option value = "P/P">P/P</option>
+							<option value = "W/P">W/P</option>
+							<option value = "N/C">N/C</option>
+						</select></th>
+						<td class = "stackedInput"><select name = "tipMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+						</select><br>
+						<input type = "number" name = "tipAmount"><br></td>
+						<td><input type = "text" name = "comments"><br></td>
+						<td><input type = "submit" value = "submit" class = "submit"></td>
+						</form>
+					</tr>
+		<!--automate additional rows w/ script-->
+				</table>
+			</div>
+			<div class = "content tabSetOne" id = "contentThree">
+				<table>
+					<thead>
+						<th>Customer Name</th>
+						<th>Pet Name</th>
+						<th>Amount</th>
+						<th>CA, CC, CARD?</th>
+						<th>Tips</th>
+						<th>Comments/Additional Amounts</th>
+					</thead>
+					<tr class = "activeRow">
+						<form>
+						<td><input type = "text" name = "cust"><br></td>
+						<td><input type = "text" name = "pet"><br></td>
+						<td><input type = "number" name = "total"><br></td>
+						<td><select name = "payMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+							<option value = "CARD">CARD</option>
+							<option value = "P/P">P/P</option>
+							<option value = "W/P">W/P</option>
+							<option value = "N/C">N/C</option>
+						</select></th>
+						<td class = "stackedInput"><select name = "tipMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+						</select><br>
+						<input type = "number" name = "tipAmount"><br></td>
+						<td><input type = "text" name = "comments"><br></td>
+						<td><input type = "submit" value = "submit" class = "submit"></td>
+						</form>
+					</tr>
+				</table>
+			</div>
+			<div class = "content tabSetOne" id = "contentFour">
+				<table>
+					<thead>
+						<th>Customer Name</th>
+						<th>Pet Name</th>
+						<th>Description</th>
+						<th>Total Amount</th>
+						<th>CA, CC, CARD?</th>
+						<th>Tips</th>
+						<th>Comments/Additional Amounts</th>
+					</thead>
+					<tr class = "activeRow">
+						<form>
+						<td><input type = "text" name = "cust"><br></td>
+						<td><input type = "text" name = "pet"><br></td>
+						<td><input type = "text" name = "description"><br></td>
+						<td><input type = "number" name = "total"><br></th>
+						<td><select name = "payMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+							<option value = "CARD">CARD</option>
+							<option value = "P/P">P/P</option>
+							<option value = "W/P">W/P</option>
+							<option value = "N/C">N/C</option>
+						</select></th>
+						<td class = "stackedInput"><select name = "tipMethod">
+							<option>-</option>
+							<option value = "CA">CA</option>
+							<option value = "CC">CC</option>
+						</select><br>
+						<input type = "number" name = "tipAmount"><br></td>
+						<td><input type = "text" name = "comments"><br></td>
+						<td><input type = "submit" value = "submit" class = "submit"></td>
+						</form>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--RIGHT SIDE-->
+	<div class = "rightSide">
+		<div class = "tabs" id = "dashboard">
+			<input type = "radio" id = "tabFive" name = "tabSetTwo" class = "tab" checked>
+			<label for = "tabFive">Dogs</label>
+			<input type = "radio" id = "tabSix" name = "tabSetTwo" class = "tab">
+			<label for = "tabSix">Revenue</label>
+			<div class = "content dash dogCount" id = "contentFive">
+				<table>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td>Daycare</td>
+						<td>Boarding</td>
+						<td>Grooming</td>
+						<td>Bathing</td>
+					</tr>
+				</table>
+			</div>
+			<div class = "content dash monCount" id = "contentSix">
+				<table>
+					<thead>
+						<th></th>
+						<th>Actual</th>
+						<th>Expected</th>
+					</thead>
+					<tr>
+						<td>Daycare</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Boarding</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Tips</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Bathing</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Grooming</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class = "fileViewer">
+			<div class = "defaultMessage">
+				<h3>No Card Selected</h3>
+				<img src = "Images/blankScreenDog.png" height = "80">
+			</div>
+			<div id = "fileViewButtons">
+				<button type = "button">View Files</button>
+				<button type = "button">Edit Vaccinations</button>
+			</div>
+		</div>
+	</div>
+	<script src = "https://momentjs.com/downloads/moment.js"></script>
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src = "JS/main_script.js"></script>
+</body>
+</html>
